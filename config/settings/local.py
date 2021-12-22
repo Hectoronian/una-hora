@@ -23,3 +23,5 @@ MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]  # noqa F405
 # Show django-debug-toolbar when using Docker
 hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
 INTERNAL_IPS += [ip[:-1] + "1" for ip in ips]
+# For Windows that Python doesn't find the location of nodejs when building
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
